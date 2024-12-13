@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2024 at 05:25 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Dec 13, 2024 at 04:15 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,8 +67,8 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`id`, `nama`, `alamat`, `password`, `no_hp`, `id_poli`) VALUES
-(5, 'Dr.Yoru', 'yoru@gmail.com', '$2y$10$QlJ/O0dsxj6YexrJrz6Tzes4dzYLded.qN4zorhw/lJBvAm7nk6T.', '321321321321', 9),
-(8, 'Ifan', 'Semarang', '$2y$10$HZ.aw7P7uJbRB25WPCoVh.unYRe/6ZR55ySVT.puV6pUkFFx1FL6y', '0889800', 9);
+(8, 'Ifan', 'Semarang', '$2y$10$HZ.aw7P7uJbRB25WPCoVh.unYRe/6ZR55ySVT.puV6pUkFFx1FL6y', '0889800', 9),
+(11, 'david', 'Pati', '$2y$10$VA3cYtVTGZDhr0AMzabuJuZ.hINr1Xzeab1zP6YlXzhAvdxw2bUjC', '12312321', 9);
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,7 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`id`, `nama_obat`, `kemasan`, `harga`) VALUES
-(2, 'Albendazol', 'ktk 5 x 6 tablet @', 15000);
+(2, 'Paracetamol', 'ktk 5 x 6 tablet @', 15000);
 
 -- --------------------------------------------------------
 
@@ -125,8 +125,8 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id`, `nama`, `alamat`, `password`, `no_ktp`, `no_hp`, `no_rm`) VALUES
-(11, 'Adi', 'Semarang', '$2y$10$ng0HnytO8tZO.u4VAWypkOeZK0DwOXL4OTVaUhrlrgyMvbJUAmQM6', '123456', '123456', '202412-001'),
-(15, 'Saya', 'Sayanih', '$2y$10$Fm/F0OrGdGh.DzLCrKxxc.YAxhNMlP1kfQ9iwyV71SmS99Lw/bZXq', '890890890', '890890890', '202412-002');
+(35, 'rafi', 'sragen', '$2y$10$5x3onRz8jsPHGl0VhWDXR.b41ob7vfsj1hrhwBNuG0OP7.RKGUAla', '1231312', '13123131231', '202412-004'),
+(37, 'morant', 'jember', '$2y$10$7MJW7M7mtqUTyDv5LblctegziAOxL0KpI.LgpX1upKOKaasklT8g.', '1231231231', '1231231231', '202412-005');
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,8 @@ CREATE TABLE `poli` (
 --
 
 INSERT INTO `poli` (`id`, `nama_poli`, `deskripsi`) VALUES
-(9, 'Poli Gigi', 'hehe');
+(9, 'Poli Gigi', 'spesialis gigi'),
+(16, 'Poli Syaraf', 'asdassadas');
 
 --
 -- Indexes for dumped tables
@@ -242,7 +243,7 @@ ALTER TABLE `detail_periksa`
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `jadwal_periksa`
@@ -254,13 +255,13 @@ ALTER TABLE `jadwal_periksa`
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `periksa`
@@ -272,7 +273,7 @@ ALTER TABLE `periksa`
 -- AUTO_INCREMENT for table `poli`
 --
 ALTER TABLE `poli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
